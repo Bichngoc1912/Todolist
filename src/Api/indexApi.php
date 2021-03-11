@@ -9,21 +9,22 @@
  
   if (!$conn) {
          die('Could not connect: ' . mysqli_connect_errno());
-  }else{
-     $getValue = "select a.intId , a.strTitle ,a.flagStatus 
-     from user a;"; 
+  }
+    //select all value from database
+     $getValue = "select a.intId , a.strTitle ,a.flagStatus from user a;"; 
      $result = $conn->query($getValue);
      $arrRes=[];
+     //checks the number of rows in the table
      if($result->num_rows > 0){
        while($row = $result->fetch_assoc()){
-       $arr = [
+         //save the newly retrieved data
+       $arrRes[] = [
            "intId" => $row["intId"],
            "strTitle" => $row["strTitle"],
            "flagStatus" => $row["flagStatus"]
          ];
-       $a = array_push($arrRes,$arr);
-         
        }
+       //data response for client
        $arrResponse = [
         "success" => true,
         "code"=>200,
@@ -32,11 +33,7 @@
         "message" => "Get data successfully."
        ];
         echo json_encode( $arrResponse);
-     }else{
-       echo "0 result";
      }
-  }
-   
   mysqli_close($conn);
 
  }catch(Exception $e){
