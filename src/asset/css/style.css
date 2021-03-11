@@ -1,0 +1,191 @@
+body{
+    margin: 0 0;
+    font-size: 16pt;
+}
+
+header {
+    width: 100%;
+    height: 12rem;
+    background-image: url('https://img.freepik.com/free-photo/hand-painted-watercolor-background-with-sky-clouds-shape_24972-1095.jpg?size=626&ext=jpg');
+    background-size: cover;
+}
+
+.flex-menu{
+    margin: 0 0;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #3e978b;
+} 
+    .menu-item{
+        vertical-align: baseline;
+        width: 150px;
+        height: 70px;
+        text-align: center;
+    }
+    .menu-item:hover{
+        background-color: #276678;
+        cursor: pointer;
+        font-weight: bold;
+    }
+        .menu-item--link{
+            text-decoration: none;
+            color: white;
+        }
+        .container-fuild{
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            margin: 3rem 5rem;
+            /* background-color: #276678; */
+        }
+            .container-fuild #Title {
+                text-align: center;
+            }
+        .container{
+            display: flex;
+            flex-wrap: nowrap;
+            width: 90%;
+            margin:1rem 2rem;
+        }
+            .container .nav{
+                flex: 30%;
+            }
+            .container .content{
+                flex: 90%;
+            }
+            .container .content .input-txt input{
+                height: 30px;
+                border: 1px solid lightgray;
+                outline: none;
+                border-radius: 5px;
+                width: 90%;
+                font-size: 18px;
+            }
+            .container .content {
+                margin-top: 20px;
+            }
+            .container .content .input-txt .btn-submit{
+                width: 8%;
+                height: 35px;
+                font-size: 14pt;
+                background-color: #3e978b;
+                border: 1px solid lightgray;
+                border-radius: 5px;
+                color: white;
+            }
+            .container .content .input-txt .btn-submit:hover{
+                background-color: #276678;
+                cursor: pointer;
+                font-size: 16pt;
+                font-weight: bold;
+            }
+            .container .nav .nav-box{
+                width: 90%;
+                height: 400px;
+                border: 2px solid #19456b;
+                margin-bottom: 1rem;
+            }
+            .container .nav .nav-box .nav-box--title{
+                background-color: #8fc0a9;
+            }
+            .container .nav .nav-box .nav-box--title{
+                border-bottom: 1px solid black;
+                height: 4rem;
+            }
+            .container .content .list-item .list-item--01{
+                border: 1px solid lightgray;
+                box-shadow: 10px 5px #3e978b;
+                display: flex;
+                flex-wrap: nowrap;
+                margin:1rem 0rem;
+            }
+            .container .content .list-item .list-item--01 .item-content{
+                flex: 78%;
+            }
+            .container .content .list-item .list-item--01 input{
+                border-radius: 5px;
+                background: none;
+                background-color: white;
+                width: 5rem;
+                height: 55%;
+                margin:1rem 0.2rem;
+        
+            }
+            .container .content .list-item .list-item--01 .btn-item{
+                flex:12%;
+                display: flex;
+            }
+            .container .content .list-item .list-item--01 .btn-item .btn-item--del{
+                background-color: red;
+                border: 1px solid red;
+                font-size: 13pt;
+                outline: none;
+                flex: 50%;
+            }
+            .container .content .list-item .list-item--01 .btn-item--del:hover{
+                cursor: pointer;
+                font-weight: bold;
+                color: white;
+                outline: none;
+            }
+            .container .content .list-item .list-item--01 .btn-item .btn-item--done{
+                background-color: #00917c;
+                border: 1px solid #00917c;
+                font-size: 13pt;
+                outline: none;
+                flex: 50%;
+            }
+            .container .content .list-item .list-item--01 .btn-item--done:hover{
+                cursor: pointer;
+                font-weight: bold;
+                outline: none;
+            }
+footer {
+    width: 100%;
+    height: 4rem;
+    background-color: #3e978b;
+    color:white;
+    font-size: 16pt;
+    text-align: center;
+}
+@media only screen and (max-width:960px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    .container .nav {
+        width: 100%;
+    }
+    .container .nav .nav-box{
+        height: 200px;
+    }
+    .container .content .input-txt input{
+        width: 76%;
+    }
+    .container .content .input-txt .btn-submit{
+        width: 20%;
+    }
+    .container .content .list-item .list-item--01 {
+        display: flex;
+    }
+    .container .content .list-item .list-item--01 .btn-item{
+        display: flex;
+    }
+    .container .content .list-item .list-item--01 .item-content{
+        width: 68%;
+        font-size: 13pt;
+        flex: 50%;
+    }
+    .container .content .list-item .list-item--01 .btn-item--del{
+        background-color: red;
+        border: 1px solid red;
+        font-size: 13pt;
+        outline: none;
+        flex: 25%;
+    }
+    .container .content .list-item .list-item--01 .btn-item--done{
+        background-color: #00917c;
+        border: 1px solid #00917c;
+        font-size: 13pt;
+        outline: none;
+        flex: 25%;
+    }
+}
