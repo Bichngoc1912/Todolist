@@ -18,7 +18,7 @@ services:
   php:
     build:
       context: ./docker/phpfpm
-      dockerfile: 7.3-Dockerfile
+      dockerfile: Dockerfile
     volumes: 
       - ./src/:/var/www/myapp
     container_name: Todolist1
@@ -33,5 +33,13 @@ services:
       MYSQL_DATABASE: Todolist2
     ports:
       - "3306:3306"
+    networks:
+      - my-network
+  redis:
+    image: redis:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports: 
+      - 6379:6379
     networks:
       - my-network
