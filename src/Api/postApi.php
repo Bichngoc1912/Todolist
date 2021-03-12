@@ -1,5 +1,10 @@
 <?php 
 function postData($param){
+  $redis = new Redis();
+  $redis->connect("redis",6379);
+
+  $keys = 'user';
+
   $serverName = "mariadb";
   $userName = "root";
   $passWord = "root";
@@ -15,6 +20,9 @@ function postData($param){
   //check param and query 
   if(!empty($param) && mysqli_query($conn,$insertValue)){
       echo "add item successfully!";
+      if($redis->get($keys)){
+        $redis->DEL($keys);
+      }
   }
   echo "error:" .$insertValue ."</br>" .mysqli_error($conn); // show error if condition false
   mysqli_close($conn);
