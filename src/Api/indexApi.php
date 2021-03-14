@@ -1,19 +1,17 @@
 <?php 
 
+include 'connection.php';
 function getData_redis(){
-  
+ 
   $redis = new Redis();
   $redis->connect("redis",6379);
   $keys = 'user';
 
   if(!$redis->get($keys)){
     try{
-      $serverName = "mariadb";
-      $userName = "root";
-      $passWord = "root";
-      $dbName = "Todolist2";
-    
-      $conn = mysqli_connect($serverName, $userName, $passWord, $dbName);
+      $db_Factory = new connectionFactory();
+      $db_Factory->setDriver('mariaDB');
+      $conn = $db_Factory->connect("mariadb","root","root","Todolist2");
     //  echo "database";
       if (!$conn) {
              die('Could not connect: ' . mysqli_connect_errno());
